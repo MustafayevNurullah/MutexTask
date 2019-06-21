@@ -22,20 +22,9 @@ namespace MutexTask
     /// </summary>
     public partial class MainWindow : Window
     {
-        bool a;
         public MainWindow()
         {
             InitializeComponent();
-            Mutex mutex = new Mutex(false, "MutexTask",out a );
-                mutex.WaitOne();
-           if(!a)
-            {
-                MessageBox.Show("Test");
-                mutex.ReleaseMutex();
-            }
-
-
-
         }
     }
 }
